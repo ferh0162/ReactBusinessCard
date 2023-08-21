@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Image 
+        source={require('./assets/marsk.png')} 
+        style={styles.imageStyle}
+      />
+      <Text>Business Card</Text>
       <StatusBar style="auto" />
+      <Button 
+        title="Show phone number" 
+        onPress={() => alert('+45 112')} 
+      />
     </View>
   );
 }
@@ -15,6 +23,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    top: 250
   },
+  imageStyle: {
+    width: 200,  // Set the desired width
+    height: 200,  // Set the desired height
+    resizeMode: 'contain',  // Adjust the image according to its original aspect ratio
+    marginBottom: 20,  // Some space below the image before other elements
+    
+  }
 });
